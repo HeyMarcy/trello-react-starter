@@ -1,32 +1,26 @@
 import React from 'react';
 import Card from './card';
 
-export default function List(props) {
-    const cardList = []
-    for(let i=0; i<3; i++) {
-        cardList.push(<Card text={`This is card ${i+1}`}/>);
+export default class List extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+            value: ""
+        }
     }
-    return (
-        <div className="list">
-        <h3 className="listTitle">{props.listTitle}</h3>
-            {cardList}
-        </div>
-    )
+    render() {
+
+        return (
+            <div className="list">
+                <h3 className="listTitle">{this.props.listTitle}</h3>
+
+                <form className="list-form">
+                    <label>Card Title</label>
+                    <input type="text"></input>
+                    <input type="submit" value="submit"/>
+                </form>
+            </div>
+        );
+    }
 }
-List.defaultProps = {
-    title: ''
-};
-
-
-// export default function List(props) {
-//     const cardList = []
-//     for(let i=0; i<3; i++) {
-//         cardList.push(<Card text={`This is card ${i+1}`}/>);
-//     }
-//     return (
-//         <div className="list">
-//         <h3 className="listTitle">{props.listTitle}</h3>
-//             {cardList}
-//         </div>
-//     )
-// }
