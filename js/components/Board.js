@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './list';
+import ListContainer from './listcontainer';
 
 export default class Board extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class Board extends React.Component {
     return (
       <div className="board">
         <h3 className="boardTitle">{this.props.boardTitle}</h3>
-        {boardList}
+        <ListContainer />
       </div>
     )
   }

@@ -13,9 +13,7 @@ export default class List extends React.Component {
       return (
         <div className="list">
             <h3 className="listTitle">{this.props.listTitle}</h3>
-            <Card text="Shopping"/>
-            <Card text="Cooking"/>
-            <Card text="Car repair"/>
+            {this.props.cards}
             <form className="list-form" onSubmit={this.props.onAddSubmit}>
                 <label>Card Title</label>
                 <input
@@ -28,7 +26,3 @@ export default class List extends React.Component {
       );
     }
 }
-
-// <Button onClick={this.onButtonClick} text='Ready to be amazed?' />
-//                {this.state.clicked ? <SoundCloudEmbed trackId='191075550' /> : null}
-//            </div>
